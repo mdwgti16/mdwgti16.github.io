@@ -22,7 +22,7 @@ categories: C++
 	list<int> mList(n); // n개를 0으로 초기화
 	list<int> mList(n, m); // n개를 m으로 초기화
 	list<int> mList1 = { 1,2,3,4,5 }; // {1,2,3,4,5}로 초기화
-	list<int> mList2 (mList1); // v2를 복사해서 v1 초기화
+	list<int> mList2 (mList1); // mList1 복사해서 mList2 초기화
 	```
 
 * ###  list 접근

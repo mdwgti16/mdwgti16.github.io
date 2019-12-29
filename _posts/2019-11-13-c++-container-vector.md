@@ -21,8 +21,8 @@ categories: C++
 	vector<int> v; //선언
 	vector<int> v(n); // n개를 0으로 초기화
 	vector<int> v(n,m); // n개를 m으로 초기화
-	vector<int> v = {1,2,3,4,5}; // {1,2,3,4,5}로 초기화
-	vector<int> v1(v2); // v2를 복사해서 v1 초기화
+	vector<int> v1 = {1,2,3,4,5}; // {1,2,3,4,5}로 초기화
+	vector<int> v2(v1); // v1를 복사해서 v2 초기화
 	```
 	
 * ###  vector 접근

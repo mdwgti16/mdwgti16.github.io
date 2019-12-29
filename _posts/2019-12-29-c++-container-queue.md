@@ -13,7 +13,6 @@ categories: C++
 > ## Queue
 
 * ### queue
-
 	```c++
 	#include <queue>
 	using namespace std;
@@ -32,6 +31,7 @@ categories: C++
 	q.size(); // q의 크기 : 2
 	
 	q.empty(); // false
+	```
 	
 * ###### [C++ STL queue 기본 사용법과 예제]
 
