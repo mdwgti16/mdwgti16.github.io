@@ -37,7 +37,7 @@ categories: C++
 	s.count(2); // 원소 개수 확인 : 1
 	```
 
-* ###  set - iterator
+* ###  iterator
 	```c++
 	set<int> s = { 1,2,3,4,5 }; // {1,2,3,4,5}로 초기화
 	set<int>::iterator it;
@@ -46,7 +46,7 @@ categories: C++
 		cout << *it << endl;
 	```
 
-* ###  set - for
+* ###  for
 	```c++
 	set<int> s = { 1,2,3,4,5 }; // {1,2,3,4,5}로 초기화
 	

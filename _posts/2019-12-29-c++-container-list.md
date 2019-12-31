@@ -12,20 +12,20 @@ categories: C++
 
 > ## List
 
-* ### list 생성 및 초기화;
+* ### 생성 및 초기화;
 
 	```c++
 	#include <list>
 	using namespace std;
 
-	list<int> mList; //선언
+	list<int> mList; // 선언
 	list<int> mList(n); // n개를 0으로 초기화
 	list<int> mList(n, m); // n개를 m으로 초기화
 	list<int> mList1 = { 1,2,3,4,5 }; // {1,2,3,4,5}로 초기화
 	list<int> mList2 (mList1); // mList1 복사해서 mList2 초기화
 	```
 
-* ###  list 접근
+* ###  접근
 	```c++
 	list<int> mList = { 1,2,3,4,5 }; // {1,2,3,4,5}로 초기화
 
@@ -33,7 +33,7 @@ categories: C++
 	mList.back() = 10; // 맨 뒤 요소 접근 {0,2,3,4,10}
 	```
 	
-* ###  list 추가 및 제거
+* ###  추가 및 제거
 	```c++
 	list<int> mList = { 1,2,3,4,5 }; // {1,2,3,4,5}로 초기화
 	
@@ -55,7 +55,7 @@ categories: C++
 
 	```
 
-* ###  list - iterator
+* ###  iterator
 	```c++
 	list<int> mList = { 1,2,3,4,5 }; // {1,2,3,4,5}로 초기화
 	list<int>::iterator it;
@@ -64,7 +64,7 @@ categories: C++
 		cout << *it << endl;
 	```
 
-* ###  list - for
+* ###  for
 	```c++
 	list<int> mList = { 1,2,3,4,5 }; // {1,2,3,4,5}로 초기화
 	
@@ -72,7 +72,7 @@ categories: C++
 		cout << e << endl;
 	```
 	
-* ### list 정렬
+* ### 정렬
 	```c++
 	bool desc(int a, int b) { return a > b; }
 	
@@ -91,7 +91,7 @@ categories: C++
 	// {1,1,2,3,6,7,9}
 	```	
 
-* ###  list 중복 제거
+* ###  중복 제거
 	```c++
 	list<int> mList = { 1,1,1,2,3,3,4,6,6,9,9,9 };
 	mList.erase(unique(mList.begin(), mList.end()), mList.end());

@@ -12,16 +12,9 @@ categories: C++
 
 > ## Vector 
 
-* ### vector 생성 및 초기화;
+* ### 생성 및 초기화;
 
 	```c++
-<<<<<<< HEAD
-	vector<int> v; //선언
-	vector<int> v(n); // n개를 0으로 초기화
-	vector<int> v(n,m); // n개를 m으로 초기화
-	vector<int> v = {1,2,3,4,5}; // {1,2,3,4,5}로 초기화
-	vector<int> v1(v2); // v2를 복사해서 v1 초기화
-=======
 	#include <vector>
 	using namespace std;
 
@@ -30,21 +23,17 @@ categories: C++
 	vector<int> v(n,m); // n개를 m으로 초기화
 	vector<int> v1 = {1,2,3,4,5}; // {1,2,3,4,5}로 초기화
 	vector<int> v2(v1); // v1를 복사해서 v2 초기화
->>>>>>> b1aa7f26f07bf29f06c4ef3a1b38ad798cfa41ba
 	```
 	
-* ###  vector 접근
+* ###  접근
 	```c++
 	v.at(n) = 0; 
 	v[n] = 0; 
 	v.front() // Returns a reference to the first element in the vector.
-<<<<<<< HEAD
-	v/back() // Returns a reference to the last element in the vector.
-=======
 	v.back() // Returns a reference to the last element in the vector.
 	```
 	
-	* ###  vector 추가 및 제거
+* ###  추가 및 제거
 	```c++
 	vector<int> v = { 1,2,3,4,5 };
 	
@@ -60,7 +49,7 @@ categories: C++
 
 	```
 
-* ###  vector - iterator
+* ###  iterator
 	```c++
 	vector<int> v = { 1,2,3,4,5 };
 	vector<int>::iterator it;
@@ -68,7 +57,7 @@ categories: C++
 		cout << *it << endl;
 	```
 
-* ###  vector - for
+* ###  for
 	```c++
 	vector<int> v = { 1,2,3,4,5 };
 	
@@ -77,10 +66,9 @@ categories: C++
 	
 	for (int i = 0; i < v.size(); i++)
 		cout << v[i] << endl;
->>>>>>> b1aa7f26f07bf29f06c4ef3a1b38ad798cfa41ba
 	```
 	
-* ###  vector 정렬
+* ###  정렬
 	```c++
 	bool desc(int a, int b) { return a > b; }
 	
@@ -91,15 +79,11 @@ categories: C++
 	// {1,1,2,3,6,7,9}
 
 	// 내림차순
-<<<<<<< HEAD
-	sort(arr.begin(), arr.end());
-=======
 	sort(arr.begin(), arr.end(),desc);
->>>>>>> b1aa7f26f07bf29f06c4ef3a1b38ad798cfa41ba
 	// {9,7,6,3,2,1,1}
 	```	
 
-* ###  vector 중복 제거
+* ###  중복 제거
 	```c++
 	vector<int> arr = { 1,1,1,2,3,3,4,6,6,9,9,9 };
 	arr.erase(unique(arr.begin(), arr.end()), arr.end());
