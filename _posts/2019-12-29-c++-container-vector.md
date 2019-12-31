@@ -6,7 +6,7 @@ read_time: true
 comments: null
 share: true
 related: true
-date: '2019-11-13 17:26:28 +0900'
+date: '2019-12-31 17:26:28 +0900'
 categories: C++
 ---
 
@@ -27,10 +27,10 @@ categories: C++
 	
 * ###  접근
 	```c++
-	v.at(n) = 0; 
-	v[n] = 0; 
-	v.front() // Returns a reference to the first element in the vector.
-	v.back() // Returns a reference to the last element in the vector.
+	v.at(n) = 0; // n번 째 요소 접근
+	v[n] = 0; // n번 째 요소 접근
+	v.front(); // 맨 앞 요소 접근
+	v.back(); // 맨 뒤 요소 접근 
 	```
 	
 * ###  추가 및 제거
@@ -43,7 +43,7 @@ categories: C++
 	v.insert(v.begin() + 2, 10); // 2 번째 자리에 10 추가 {1,2,10,3,4,5}
 	v.erase(v.begin() + 2); // 2 번째 요소 제거 {1,2,3,4,5}
 	
-	v.erase(v.begin()+3, v.end()-1); // first index +3 ~ last index - 1 까지의 요소를 제거 {1,2,3,5}
+	v.erase(v.begin()+2, v.end()-1); // v.begin()+3 ~ v.end()-1 제거 {1,2,5}
 	
 	v.clear(); // 전체 요소 제거 size => 0, capacity는 그대로
 
@@ -52,6 +52,7 @@ categories: C++
 * ###  iterator
 	```c++
 	vector<int> v = { 1,2,3,4,5 };
+	
 	vector<int>::iterator it;
 	for (it = v.begin(); it != v.end(); it++)
 		cout << *it << endl;
@@ -72,21 +73,21 @@ categories: C++
 	```c++
 	bool desc(int a, int b) { return a > b; }
 	
-	vector<int> arr = { 1,9,3,6,2,1,7 };
+	vector<int> v = { 1,9,3,6,2,1,7 };
 
 	// 오름차순
-	sort(arr.begin(), arr.end());
+	sort(v.begin(), v.end());
 	// {1,1,2,3,6,7,9}
 
 	// 내림차순
-	sort(arr.begin(), arr.end(),desc);
+	sort(v.begin(), v.end(),desc);
 	// {9,7,6,3,2,1,1}
 	```	
 
 * ###  중복 제거
 	```c++
-	vector<int> arr = { 1,1,1,2,3,3,4,6,6,9,9,9 };
-	arr.erase(unique(arr.begin(), arr.end()), arr.end());
+	vector<int> v = { 1,1,1,2,3,3,4,6,6,9,9,9 };
+	v.erase(unique(v.begin(), v.end()), v.end());
 	// {1, 2, 3, 4, 6, 9}
 	```	
 	
