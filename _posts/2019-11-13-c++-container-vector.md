@@ -15,11 +15,22 @@ categories: C++
 * ### vector 생성 및 초기화;
 
 	```c++
+<<<<<<< HEAD
 	vector<int> v; //선언
 	vector<int> v(n); // n개를 0으로 초기화
 	vector<int> v(n,m); // n개를 m으로 초기화
 	vector<int> v = {1,2,3,4,5}; // {1,2,3,4,5}로 초기화
 	vector<int> v1(v2); // v2를 복사해서 v1 초기화
+=======
+	#include <vector>
+	using namespace std;
+
+	vector<int> v; //선언
+	vector<int> v(n); // n개를 0으로 초기화
+	vector<int> v(n,m); // n개를 m으로 초기화
+	vector<int> v1 = {1,2,3,4,5}; // {1,2,3,4,5}로 초기화
+	vector<int> v2(v1); // v1를 복사해서 v2 초기화
+>>>>>>> b1aa7f26f07bf29f06c4ef3a1b38ad798cfa41ba
 	```
 	
 * ###  vector 접근
@@ -27,7 +38,46 @@ categories: C++
 	v.at(n) = 0; 
 	v[n] = 0; 
 	v.front() // Returns a reference to the first element in the vector.
+<<<<<<< HEAD
 	v/back() // Returns a reference to the last element in the vector.
+=======
+	v.back() // Returns a reference to the last element in the vector.
+	```
+	
+	* ###  vector 추가 및 제거
+	```c++
+	vector<int> v = { 1,2,3,4,5 };
+	
+	v.push_back(6); // 마지막에 요소 추가 {1,2,3,4,5,6}
+	v.pop_back(); // 마지막 요소 제거 {1,2,3,4,5}
+	
+	v.insert(v.begin() + 2, 10); // 2 번째 자리에 10 추가 {1,2,10,3,4,5}
+	v.erase(v.begin() + 2); // 2 번째 요소 제거 {1,2,3,4,5}
+	
+	v.erase(v.begin()+3, v.end()-1); // first index +3 ~ last index - 1 까지의 요소를 제거 {1,2,3,5}
+	
+	v.clear(); // 전체 요소 제거 size => 0, capacity는 그대로
+
+	```
+
+* ###  vector - iterator
+	```c++
+	vector<int> v = { 1,2,3,4,5 };
+	vector<int>::iterator it;
+	for (it = v.begin(); it != v.end(); it++)
+		cout << *it << endl;
+	```
+
+* ###  vector - for
+	```c++
+	vector<int> v = { 1,2,3,4,5 };
+	
+	for (int e : v)
+		cout << e << endl;
+	
+	for (int i = 0; i < v.size(); i++)
+		cout << v[i] << endl;
+>>>>>>> b1aa7f26f07bf29f06c4ef3a1b38ad798cfa41ba
 	```
 	
 * ###  vector 정렬
@@ -41,7 +91,11 @@ categories: C++
 	// {1,1,2,3,6,7,9}
 
 	// 내림차순
+<<<<<<< HEAD
 	sort(arr.begin(), arr.end());
+=======
+	sort(arr.begin(), arr.end(),desc);
+>>>>>>> b1aa7f26f07bf29f06c4ef3a1b38ad798cfa41ba
 	// {9,7,6,3,2,1,1}
 	```	
 
