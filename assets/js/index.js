@@ -5,10 +5,11 @@ $('.page__content > p > img[alt]').replaceWith(function () {
         + '<img src="' + $(this).attr('src') + '"/></a>'
         + '<figcaption class="caption">' + $(this).attr('alt') + '</figcaption>'
         + '</figure>';
-});
-
+  });
+  
 // 이미지를 magnific popup image viewer에 연결시킴
 $('.mg-link').magnificPopup({
-    type: 'image',
-    closeOnContentClick: true
+type: 'image',
+closeOnContentClick: true
 });
+  
