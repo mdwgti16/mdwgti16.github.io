@@ -90,9 +90,11 @@ categories: C++
 	v.erase(unique(v.begin(), v.end()), v.end());
 	// {1, 2, 3, 4, 6, 9}
 	```	
-	
+
+* ###### [std::vector]
 * ###### [STL 에서 vector 에 중복 원소 없애기]
 * ###### [C++ :: STL sort() 함수 다루기]
 
-[STL 에서 vector 에 중복 원소 없애기]: https://sgc109.tistory.com/99
+[std::vector]: https://sgc109.tistory.com/99
+[STL 에서 vector 에 중복 원소 없애기]: http://www.cplusplus.com/reference/vector/vector/
 [C++ :: STL sort() 함수 다루기]:https://hongku.tistory.com/153

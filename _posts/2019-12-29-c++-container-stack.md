@@ -32,7 +32,8 @@ categories: C++
 	s.empty(); // false
 	```
 
-	
+* ###### [std::stack]	
 * ###### [C++ STL stack 기본 사용법과 예제]
 
+[std::stack]: http://www.cplusplus.com/reference/stack/stack/
 [C++ STL stack 기본 사용법과 예제]: https://twpower.github.io/75-how-to-use-stack-in-cpp

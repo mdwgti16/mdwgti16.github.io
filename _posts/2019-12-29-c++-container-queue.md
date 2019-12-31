@@ -33,6 +33,7 @@ categories: C++
 	q.empty(); // false
 	```
 	
+* ###### [std::queue]	
 * ###### [C++ STL queue 기본 사용법과 예제]
-
+[std::queue]: http://www.cplusplus.com/reference/queue/queue/
 [C++ STL queue 기본 사용법과 예제]: https://twpower.github.io/76-how-to-use-queue-in-cpp
