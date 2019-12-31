@@ -19,7 +19,6 @@ categories: C++
 	using namespace std;
 
 	map<key, value> m;// map 선언
-	
 	```
 
 * ###  map
@@ -85,6 +84,11 @@ categories: C++
 		cout << "key = " << p.first << " value = " << p.second << endl;
 	```
 	
-* ###### [C++ STL set 기본 사용법과 예제]
+* ###### [std::map]
+* ###### [map key_comp() in C++ STL]
+* ###### [C++ STL map 기본 사용법과 예제]
 
-[C++ STL set 기본 사용법과 예제]: https://twpower.github.io/92-how-to-use-set-in-cpp
+
+[std::map]: http://www.cplusplus.com/reference/map/map/
+[map key_comp() in C++ STL]: https://www.geeksforgeeks.org/map-key_comp-in-c-stl/
+[C++ STL map 기본 사용법과 예제]: https://twpower.github.io/91-how-to-use-map-in-cpp

@@ -12,7 +12,7 @@ categories: C++
 
 > ## List
 
-* ### 생성 및 초기화;
+* ### 생성 및 초기화
 
 	```c++
 	#include <list>
