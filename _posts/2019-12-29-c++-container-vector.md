@@ -95,6 +95,6 @@ categories: C++
 * ###### [STL 에서 vector 에 중복 원소 없애기]
 * ###### [C++ :: STL sort() 함수 다루기]
 
-[std::vector]: https://sgc109.tistory.com/99
-[STL 에서 vector 에 중복 원소 없애기]: http://www.cplusplus.com/reference/vector/vector/
+[std::vector]: http://www.cplusplus.com/reference/vector/vector/
+[STL 에서 vector 에 중복 원소 없애기]: https://sgc109.tistory.com/99
 [C++ :: STL sort() 함수 다루기]:https://hongku.tistory.com/153
