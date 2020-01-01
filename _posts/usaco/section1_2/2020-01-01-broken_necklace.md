@@ -7,7 +7,8 @@ comments: null
 share: true
 related: true
 date: '2020-1-1 11:27:28 +0900'
-categories: [USACO Training]
+categories:
+- USACO Training
 ---
 
 > ## Broken Necklace
@@ -51,8 +52,8 @@ categories: [USACO Training]
 #### Write a program to determine the largest number of beads that can be collected from a supplied necklace.
 
 ### INPUT FORMAT
-	Line 1:	N, the number of beads
-	Line 2:	a string of N characters, each of which is r, b, or w
+#### Line 1:	N, the number of beads
+#### Line 2:	a string of N characters, each of which is r, b, or w
 
 ### SAMPLE INPUT (file beads.in)
 	29

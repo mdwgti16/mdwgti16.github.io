@@ -7,7 +7,8 @@ comments: null
 share: true
 related: true
 date: '2020-1-1 12:27:28 +0900'
-categories: [USACO Training]
+categories:
+- USACO Training
 ---
 
 > ## Friday the Thirteenth
@@ -33,7 +34,7 @@ categories: [USACO Training]
 
 ### INPUT FORMAT
 
-	One line with the integer N.
+#### One line with the integer N.
 
 ### SAMPLE INPUT (file friday.in)
 	20

@@ -28,7 +28,7 @@ categories:
 #### In the case that more than one transform could have been used, choose the one with the minimum number above.
 
 ### INPUT FORMAT
-
+<table>
 <tbody><tr> <td> Line 1: </td> <td> A single integer, N </td> </tr>
 <tr> <td> Line 2..N+1: </td> <td> N lines of N characters (each either
 		`@' or `-'); this is the square before
@@ -37,6 +37,7 @@ categories:
 		`@' or `-'); this is the square after transformation</td>
 		</tr>
 </tbody>
+</table>
 
 ### SAMPLE INPUT (file transform.in)
 	3
