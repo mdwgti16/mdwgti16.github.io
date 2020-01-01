@@ -2,6 +2,6 @@
 
 layout: category
 
-title: [USACO Training]
+title: USACO Training
 
 ---

@@ -6,9 +6,8 @@ read_time: true
 comments: null
 share: true
 related: true
-date: '2020-1-1 11:27:28 +0900'
-categories:
-- USACO Training
+date: '2020-1-1 13:27:28 +0900'
+categories: [USACO Training]
 ---
 
 > ## Milking Cows
