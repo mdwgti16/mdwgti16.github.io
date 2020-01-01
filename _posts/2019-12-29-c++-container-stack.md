@@ -1,5 +1,5 @@
 ---
-title: C++ - Stack
+title: C++ - STL Stack
 layout: single
 author_profile: true
 read_time: true
@@ -10,7 +10,7 @@ date: '2019-12-29 16:26:28 +0900'
 categories: C++
 ---
 
-> ## Stack
+> ## STL Stack
 
 * ### stack
 

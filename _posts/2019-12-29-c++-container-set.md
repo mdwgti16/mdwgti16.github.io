@@ -1,5 +1,5 @@
 ---
-title: C++ - Set
+title: C++ - STL Set
 layout: single
 author_profile: true
 read_time: true
@@ -10,7 +10,7 @@ date: '2019-12-29 17:26:28 +0900'
 categories: C++
 ---
 
-> ## Set 
+> ## STL Set 
 
 * ### set 생성 및 초기화;
 

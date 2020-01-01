@@ -1,5 +1,5 @@
 ---
-title: C++ - Vector
+title: C++ - STL Vector
 layout: single
 author_profile: true
 read_time: true
@@ -10,7 +10,7 @@ date: '2019-12-31 17:26:28 +0900'
 categories: C++
 ---
 
-> ## Vector 
+> ## STL Vector 
 
 * ### 생성 및 초기화
 

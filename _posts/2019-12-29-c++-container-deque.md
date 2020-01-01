@@ -1,5 +1,5 @@
 ---
-title: C++ - Deque
+title: C++ - STL Deque
 layout: single
 author_profile: true
 read_time: true
@@ -10,7 +10,7 @@ date: '2019-12-31 17:26:28 +0900'
 categories: C++
 ---
 
-> ## Deque
+> ## STL Deque
 
 * ### 생성 및 초기화
 

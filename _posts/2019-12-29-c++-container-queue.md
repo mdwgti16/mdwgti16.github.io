@@ -1,5 +1,5 @@
 ---
-title: C++ - Queue
+title: C++ - STL Queue
 layout: single
 author_profile: true
 read_time: true
@@ -10,7 +10,7 @@ date: '2019-12-29 16:56:28 +0900'
 categories: C++
 ---
 
-> ## Queue
+> ## STL Queue
 
 * ### queue
 	```c++

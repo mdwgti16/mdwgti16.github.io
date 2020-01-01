@@ -1,5 +1,5 @@
 ---
-title: C++ - List
+title: C++ - STL List
 layout: single
 author_profile: true
 read_time: true
@@ -10,7 +10,7 @@ date: '2019-12-31 13:26:28 +0900'
 categories: C++
 ---
 
-> ## List
+> ## STL List
 
 * ### 생성 및 초기화
 

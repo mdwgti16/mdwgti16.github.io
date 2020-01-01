@@ -1,5 +1,5 @@
 ---
-title: C++ - Map
+title: C++ - STL Map
 layout: single
 author_profile: true
 read_time: true
@@ -10,7 +10,7 @@ date: '2019-12-29 17:26:28 +0900'
 categories: C++
 ---
 
-> ## Map
+> ## STL Map
 
 * ### Map 생성
 
