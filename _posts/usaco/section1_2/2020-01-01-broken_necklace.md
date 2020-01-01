@@ -7,7 +7,7 @@ comments: null
 share: true
 related: true
 date: '2020-1-1 11:27:28 +0900'
-categories: USACO Training
+categories: [USACO Training]
 ---
 
 > ## Broken Necklace
@@ -118,5 +118,7 @@ with open('beads.out','w') as fout:
 ```
 
 * ###### [Broken Necklace]
+* ###### [mdwgti16/USACO]
 
+[mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.2
 [Broken Necklace]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=beads

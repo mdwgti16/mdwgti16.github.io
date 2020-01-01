@@ -7,7 +7,7 @@ comments: null
 share: true
 related: true
 date: '2020-1-1 12:27:28 +0900'
-categories: USACO Training
+categories: [USACO Training]
 ---
 
 > ## Friday the Thirteenth
@@ -67,5 +67,7 @@ with open('friday.out','w') as fout:
 ```
 
 * ###### [Friday the Thirteenth]
+* ###### [mdwgti16/USACO]
 
+[mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.2
 [Friday the Thirteenth]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=friday
