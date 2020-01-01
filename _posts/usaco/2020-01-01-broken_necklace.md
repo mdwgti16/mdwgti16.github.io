@@ -1,5 +1,5 @@
 ---
-title: USCAO Training - Broken Necklace (Python)
+title: USCAO Training - (Section 1.2) Broken Necklace -Python-
 layout: single
 author_profile: true
 read_time: true

@@ -1,5 +1,5 @@
 ---
-title: USCAO Training - Your Ride Is Here (Python)
+title: USCAO Training - (Section 1.2) Your Ride Is Here -Python-
 layout: single
 author_profile: true
 read_time: true

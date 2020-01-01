@@ -111,10 +111,6 @@ categories: JSP
 * ##### 실행 결과
 			
  ![](/assets/img/jsp/tomcat-jsp/servlettest.png)			
-			
-* ##### Tomcat Sever에서 print 확인			
- 
- ![](/assets/img/jsp/tomcat-jsp/tomcat_log.png)			
 
 	
 * ###### [Servlet을 포함한 JSP 2.1 웹 프로그래밍 입문에서 완성까지 ]

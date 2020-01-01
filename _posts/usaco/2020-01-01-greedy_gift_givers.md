@@ -1,5 +1,5 @@
 ---
-title: USCAO Training - Greedy Gift Givers (Python)
+title: USCAO Training - (Section 1.2) Greedy Gift Givers -Python-
 layout: single
 author_profile: true
 read_time: true

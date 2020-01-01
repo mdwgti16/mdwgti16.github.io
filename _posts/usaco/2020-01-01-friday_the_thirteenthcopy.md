@@ -1,5 +1,5 @@
 ---
-title: USCAO Training - Friday the Thirteenth (Python)
+title: USCAO Training - (Section 1.2) Friday the Thirteenth -Python-
 layout: single
 author_profile: true
 read_time: true
