@@ -126,8 +126,6 @@ with open('barn1.out','w') as fout:
     fout.write(f"{total}\n")
 ```
 
-* ###### [Barn Repair]
 * ###### [mdwgti16/USACO]
 
-[Barn Repair]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=barn1
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.4

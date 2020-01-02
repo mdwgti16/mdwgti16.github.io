@@ -7,7 +7,8 @@ comments: null
 share: true
 related: true
 date: '2020-1-1 13:27:28 +0900'
-categories: [USACO Training]
+categories:
+- USACO Training
 ---
 
 > ## Milking Cows
@@ -77,8 +78,6 @@ with open('milk2.out','w') as fout:
 	fout.write(f"{longestC} {longestI}\n")
 ```
 
-* ###### [Milking Cows]
 * ###### [mdwgti16/USACO]
 
-[Milking Cows]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=milk2
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.3

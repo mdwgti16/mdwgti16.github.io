@@ -86,8 +86,6 @@ with open('namenum.out','w') as f:
 		f.write(f'{bName[i]}\n')
 ```
 
-* ###### [Name That Number]
 * ###### [mdwgti16/USACO]
 
-[Name That Number]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=namenum
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.3

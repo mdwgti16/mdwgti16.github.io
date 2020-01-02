@@ -58,6 +58,14 @@ of milk that farmer i can sell to Merry Milk Makers per day.
 	8 80
 	6 30
 	
+###	INPUT EXPLANATION
+	100 5 -- MMM wants 100 units of milk from 5 farmers
+	5 20 -- Farmer 1 says, "I can sell you 20 units at 5 cents per unit"
+	9 40 etc.
+	3 10 -- Farmer 3 says, "I can sell you 10 units at 3 cents per unit"
+	8 80 etc.
+	6 30 -- Farmer 5 says, "I can sell you 30 units at 6 cents per unit"
+	
 ### OUTPUT FORMAT
 
 #### A single line with a single integer that is the minimum cost that Merry Milk Makers must pay for one day's milk.
@@ -65,7 +73,26 @@ of milk that farmer i can sell to Merry Milk Makers per day.
 ### SAMPLE OUTPUT (file milk.out)
 	630
 	
-### [INPUT/OUTPUT EXPLANATION](https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=milk)
+### OUTPUT EXPLANATION
+
+<table cellspacing="5">
+<tbody><tr> <th>Price<br>per unit
+     </th><th>Units<br>available
+     </th><th>Units<br>bought
+     </th><th>Price *<br># units
+     </th><th>Total cost
+     </th><th>Notes
+</th></tr>
+
+<tr><td align="center">5</td>  <td align="center">20</td>  <td align="center">20</td> <td align="center">5*20</td> <td align="center">100</td></tr>
+<tr><td align="center">9</td>  <td align="center">40</td>  <td align="center">0</td>
+        <td></td> <td></td> <td>Bought no milk from farmer 2</td></tr>
+<tr><td align="center">3</td>  <td align="center">10</td>  <td align="center">10</td> <td align="center">3*10</td> <td align="center"> 30</td></tr>
+<tr><td align="center">8</td>  <td align="center">80</td>  <td align="center">40</td> <td align="center">8*40</td> <td align="center">320</td> <td>Did not buy all 80 units!</td></tr>
+<tr><td align="center">6</td>  <td align="center">30</td>  <td align="center">30</td> <td align="center">6*30</td> <td align="center">180</td></tr>
+<tr><td align="center"><b>Total</b></td><td align="center">180</td> 
+                <td align="center"><b>100</b></td> <td></td> <td align="center"><b>630</b></td> <td>Cheapest total cost</td></tr>
+</tbody></table>
 
 
 		
@@ -99,8 +126,6 @@ with open('milk.out','w') as fout:
 	fout.write(f"{pay}\n")
 ```
 
-* ###### [Mixing Milk]
 * ###### [mdwgti16/USACO]
 
-[Mixing Milk]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=milk
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.4

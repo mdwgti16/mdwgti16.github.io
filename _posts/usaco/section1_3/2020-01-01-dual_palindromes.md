@@ -86,8 +86,6 @@ with open('dualpal.out','w') as f:
 		f.write(f'{n}\n')
 ```
 
-* ###### [Dual Palindromes]
 * ###### [mdwgti16/USACO]
 
-[Dual Palindromes]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=dualpal
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.3

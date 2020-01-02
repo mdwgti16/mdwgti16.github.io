@@ -6,7 +6,7 @@ read_time: true
 comments: null
 share: true
 related: true
-date: '2020-1-1 16:17:28 +0900'
+date: '2020-1-1 16:37:28 +0900'
 categories:
 - USACO Training
 ---
@@ -48,6 +48,7 @@ categories:
 	18
 	
 ### OUTPUT DETAILS:
+
 #### FJ keeps the hills of heights 4, 20, and 21 as they are. He adds mass to the hill of height 1, bringing it to height 4 (cost = 3^2 = 9). He shortens the hill of height 24 to height 21, also at a cost of 3^2 = 9.
 
 		
@@ -81,8 +82,6 @@ with open('skidesign.out','w') as fout:
     fout.write(f"{costMin}\n")
 ```
 
-* ###### [Ski Course Design]
 * ###### [mdwgti16/USACO]
 
-[Ski Course Design]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=skidesign
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.4

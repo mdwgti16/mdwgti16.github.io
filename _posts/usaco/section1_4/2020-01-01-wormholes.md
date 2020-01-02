@@ -58,7 +58,16 @@ Each coordinate is in the range 0..1,000,000,000.  </td></tr>
 ### SAMPLE OUTPUT (file wormhole.out)
 	2
 	
-#### [OUTPUT DETAILS](https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=wormhole)
+#### OUTPUT DETAILS
+
+	If we number the wormholes 1..4 as we read them from the input, then if wormhole 1 pairs with wormhole 2 and wormhole 3 pairs with wormhole 4, Bessie can get stuck if she starts anywhere between (0,0) and (1,0) or between (0,1) and (1,1).
+
+		 | . . . .
+		 4 3 . . .      Bessie will travel to B then
+		 1-2-.-.-.      A then across to B again
+	Similarly, with the same starting points, Bessie can get stuck in a cycle if the pairings are 1-3 and 2-4 (if Bessie enters WH#3 and comes out at WH#1, she then walks to WH#2 which transports here to WH#4 which directs her towards WH#3 again for a cycle).
+
+	Only the pairings 1-4 and 2-3 allow Bessie to walk in the +x direction from any point in the 2D plane with no danger of cycling.
 		
 ### Answer - Python
 ```python
@@ -131,8 +140,6 @@ with open('wormhole.out','w') as fout:
     fout.write(f"{cnt}\n")
 ```
 
-* ###### [Wormholes]
 * ###### [mdwgti16/USACO]
 
-[Wormholes]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=wormhole
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.4

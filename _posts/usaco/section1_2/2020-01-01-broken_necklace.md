@@ -65,7 +65,19 @@ categories:
 ### SAMPLE OUTPUT (file beads.out)
 	11
 
-### [OUTPUT EXPLANATION](https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=beads)
+### OUTPUT EXPLANATION
+
+	Consider two copies of the beads (kind of like being able to runaround the ends). The string of 11 is marked.
+									Two necklace copies joined here
+                                       v
+	wwwbbrwrbrbrrbrbrwrwwrbwrwrrb|wwwbbrwrbrbrrbrbrwrwwrbwrwrrb
+                           ******|*****
+                           rrrrrb|bbbbb  <-- assignments
+                       5xr .....#|#####  6xb
+
+				 5+6 = 11 total
+
+
 
 ### Answer - Python
 ```python
@@ -118,8 +130,6 @@ with open('beads.out','w') as fout:
 	fout.write(f"{bMax}\n")
 ```
 
-* ###### [Broken Necklace]
 * ###### [mdwgti16/USACO]
 
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.2
-[Broken Necklace]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=beads

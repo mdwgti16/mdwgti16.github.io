@@ -79,8 +79,6 @@ with open('palsquare.out','w') as f:
 		f.write(f'{k} {v}\n')
 ```
 
-* ###### [Palindromic Squares]
 * ###### [mdwgti16/USACO]
 
-[Palindromic Squares]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=palsquare
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.3

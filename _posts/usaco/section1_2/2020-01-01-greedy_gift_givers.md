@@ -7,7 +7,8 @@ comments: null
 share: true
 related: true
 date: '2020-1-1 11:27:28 +0900'
-categories: [USACO Training]
+categories:
+- USACO Training
 ---
 
 > ## Greedy Gift Givers
@@ -86,7 +87,40 @@ in a single giver's list.
 	vick 141
 	amr -150
 
-### [OUTPUT EXPLANATION](https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=gift1)
+### OUTPUT EXPLANATION
+<table>
+<tbody><tr><td class="l"><b>dave</b></td><td class="l"><b>laura</b></td><td class="l"><b>owen</b></td><td class="l"><b>vick</b></td><td class="l"><b>amr</b></td></tr>
+
+<tr class="narrow"><td class="l">0</td>   <td class="l">0</td>    <td class="l">0</td>   <td class="l">0</td>   <td class="l">0</td></tr>
+
+<tr><td colspan="5">
+
+First, 'dave' splits 200 among 'laura', 'owen', and 'vick'. That comes to
+66 each, with 2 left over</td></tr>
+
+<tr><td class="l"><b>-200+2</b></td><td class="l"><b>+66</b></td>  <td class="l"><b>+66</b></td> <td class="l"><b>+66</b></td>  <td class="l">0</td></tr>
+<tr><td colspan="5" style="padding-top:0;padding-bottom:0;">→</td></tr>
+<tr><td class="l"><b>-198</b></td><td class="l"><b>66</b></td>  <td class="l"><b>66</b></td> <td class="l"><b>66</b></td>  <td class="l">0</td></tr>
+
+<tr><td colspan="5" align="left">Second, 'owen' gives 500 to 'dave':</td></tr>
+
+<tr><td class="l">-198<b>+500</b></td>  <td class="l">66</td>  <td class="l">66<b>-500</b></td> <td class="l">66</td>  <td class="l">0</td></tr>
+<tr><td colspan="5" style="padding-top:0;padding-bottom:0;">→</td></tr>
+<tr><td class="l"><b>302</b></td>  <td class="l">66</td>  <td class="l"><b>-434</b></td> <td class="l">66</td>  <td class="l">0</td></tr>
+
+<tr><td colspan="5" align="left">Third, 'amr' splits 150 between 'vick' and 'owen':
+
+</td></tr><tr><td class="l">302</td>   <td class="l">66</td>  <td class="l">-434<b>+75</b></td><td class="l">66<b>+75</b></td>  <td class="l"><b>-150</b></td></tr>
+<tr><td colspan="5" style="padding-top:0;padding-bottom:0;">→</td></tr>
+<tr><td class="l">302</td>   <td class="l">66</td>  <td class="l"><b>-359</b></td><td class="l"><b>141</b></td> <td class="l"><b>-150</b></td></tr>
+
+<tr><td colspan="5" align="left">Fourth, 'laura' splits 0 between 'amr' and 'vick'; no changes:
+</td></tr><tr><td class="l">302</td>   <td class="l">66</td>  <td class="l">-359</td><td class="l">141</td>  <td class="l">-150</td></tr>
+<tr><td colspan="5" align="left">Finally, 'vick' gives 0 to no one:
+</td></tr><tr><td class="l"><b>dave</b></td><td class="l"><b>laura</b></td><td class="l"><b>owen</b></td><td class="l"><b>vick</b></td><td class="l"><b>amr</b></td></tr>
+<tr><td class="l">302</td>   <td class="l">66</td>  <td class="l">-359</td><td class="l">141</td>  <td class="l">-150</td></tr>
+
+</tbody></table>
 	
 ### Answer - Python
 ```python
@@ -115,8 +149,6 @@ with open('gift1.out','w') as fout:
 		fout.write(f"{name} {money}\n")
 ```
 
-* ###### [Greedy Gift Givers]
 * ###### [mdwgti16/USACO]
 
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.2
-[Greedy Gift Givers]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=gift1

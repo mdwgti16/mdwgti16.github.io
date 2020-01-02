@@ -67,8 +67,6 @@ with open('friday.out','w') as fout:
 	fout.write("{}\n".format(dayOfWeeks[6]))
 ```
 
-* ###### [Friday the Thirteenth]
 * ###### [mdwgti16/USACO]
 
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.2
-[Friday the Thirteenth]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=friday

@@ -27,13 +27,13 @@ categories:
 
 #### Consider using the set {2,3,5,7} for the cryptarithm below:
 
-		* * *
+	    * * *
 	 x    * *
-      -------
-        * * *         <-- partial product 1 -- MUST BE 3 DIGITS LONG
-      * * *           <-- partial product 2 -- MUST BE 3 DIGITS LONG
-      -------
-      * * * *
+	   -------
+	    * * *         <-- partial product 1 -- MUST BE 3 DIGITS LONG
+	  * * *           <-- partial product 2 -- MUST BE 3 DIGITS LONG
+	   -------
+	  * * * *
 #### Digits can appear only in places marked by '*'. Of course, leading zeroes are not allowed.
 
 #### The partial products must be three digits long, even though the general case (see below) might have four digit partial products.
@@ -81,7 +81,19 @@ categories:
 ### SAMPLE OUTPUT (file crypt1.out)
 	1
 	
-#### [OUTPUT DETAILS](https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=crypt1)
+#### OUTPUT DETAILS
+	Here's why 222x22 works: 3 digits times 2 digits yields two (equal!) partial products, each of three digits (as required). The answer has four digits, as required. Each digit used {2, 4, 8} is in the supplied set {2, 3, 4, 6, 8}.
+
+	Why 222x23 doesn't work:
+
+	    2 2 2   <-- OK:  three digits, all members of {2, 3, 4, 6, 8}
+          2 3   <-- OK:  two digits, all members of {2, 3, 4, 6, 8}
+	    ------
+	    6 6 6   <-- OK:  three digits, all members of {2, 3, 4, 6, 8}
+	  4 4 4     <-- OK:  three digits, all members of {2, 3, 4, 6, 8}
+	 ---------
+	  5 1 0 6   <-- NOT OK: four digits (good), but 5, 1, and 0 are not in
+																												{2, 3, 4, 6, 8}
 		
 ### Answer - Python
 ```python
@@ -130,8 +142,6 @@ with open('crypt1.out','w') as fout:
     fout.write(f"{cnt}\n")
 ```
 
-* ###### [Prime Cryptarithm]
 * ###### [mdwgti16/USACO]
 
-[Prime Cryptarithm]: https://train.usaco.org/usacoprob2?a=miQqOSmwjhm&S=crypt1
 [mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.4
