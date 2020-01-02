@@ -45,7 +45,7 @@ categories:
 	383
 	
 		
-### Answer - Python
+### Answer - C
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
