@@ -6,7 +6,7 @@ read_time: true
 comments: null
 share: true
 related: true
-date: '2020-1-1 13:37:28 +0900'
+date: '2020-1-2 13:37:28 +0900'
 categories:
 - USACO Training
 ---

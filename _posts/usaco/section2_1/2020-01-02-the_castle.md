@@ -6,7 +6,7 @@ read_time: true
 comments: null
 share: true
 related: true
-date: '2020-1-1 16:27:28 +0900'
+date: '2020-1-2 16:27:28 +0900'
 categories:
 - USACO Training
 ---
@@ -229,4 +229,4 @@ with open('castle.out','w') as fout:
 
 * ###### [mdwgti16/USACO]
 
-[mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%201/Section%201.6
+[mdwgti16/USACO]: https://github.com/mdwgti16/USACO/tree/master/USACO/Chapter%202/Section%201
