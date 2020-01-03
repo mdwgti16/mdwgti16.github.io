@@ -1,5 +1,5 @@
 ---
-title: JSP - Intellij Servlet 생성 및 매핑
+title: Intellij JSP - Servlet 생성 및 매핑
 layout: single
 author_profile: true
 read_time: true
@@ -10,7 +10,7 @@ date: '2020-1-3 16:27:28 +0900'
 categories: JSP
 ---
 
-> ## Intellij Servlet 생성 및 매핑
+> ## Servlet 생성 및 매핑
 
 ### 1. Intellij Servlet 생성
 * ##### 마우스 우클릭 -> New -> Create New Servlet
