@@ -1,5 +1,5 @@
 ---
-title: Intellij JSP - Servlet Life Cycle (생명 주기)
+title: Intellij JSP - Servlet Life Cycle (생명 주기, 선처리, 후처리)
 layout: single
 author_profile: true
 read_time: true
@@ -10,7 +10,7 @@ date: '2020-1-4 13:27:28 +0900'
 categories: JSP
 ---
 
-> ## Servlet Life Cycle (생명 주기)
+> ## Servlet Life Cycle (생명 주기, 선처리, 후처리)
 
 * ### Project - ServletTest 
 	* #### Servlet.java
@@ -78,12 +78,12 @@ categories: JSP
 		```
 	
 * ### Servlet Life Cycle
-	1. 	##### @PostConstruct - 어노테이션을 사용하여 임의의 메소드 생성
+	1. 	##### @PostConstruct - (선처리) 어노테이션을 사용하여 임의의 메소드 생성
 	2. 	##### init() - Override 메소드
 	3. 	##### doGet(),doPost()
 	4. 	##### service(..., ...) - Override 메소드
 	5. 	##### destroy() - Override 메소드
-	6. 	##### @PreDestroy - 어노테이션을 사용하여 임의의 메소드 생성
+	6. 	##### @PreDestroy - (후처리) 어노테이션을 사용하여 임의의 메소드 생성
 		
   ![](/assets/img/jsp/servlet_rifecycle.png)
 	 
