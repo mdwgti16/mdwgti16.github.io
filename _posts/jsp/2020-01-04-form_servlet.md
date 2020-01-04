@@ -10,7 +10,7 @@ date: '2020-1-4 16:27:28 +0900'
 categories: JSP
 ---
 
-> ## Get/Post/Service 한글 깨짐 해결
+> ## Html Form 태그로 Servlet에 Parameter 넘기기
 
 
 * #### Project - FormTest
