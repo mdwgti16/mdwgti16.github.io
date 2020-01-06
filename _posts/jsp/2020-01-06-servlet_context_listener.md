@@ -12,12 +12,11 @@ categories: JSP
 
 > ## Servlet Context Listener(서블릿 리스너)
 
-* ### Project - InitParam
-	* ##### ServletInitParam.java
+* ### Project - ContextListener
+	* ##### Servlet.java
 	
 		```java
 		import javax.servlet.ServletException;
-		import javax.servlet.annotation.WebInitParam;
 		import javax.servlet.annotation.WebServlet;
 		import javax.servlet.http.HttpServlet;
 		import javax.servlet.http.HttpServletRequest;
@@ -25,138 +24,83 @@ categories: JSP
 		import java.io.IOException;
 		import java.io.PrintWriter;
 
-		public class ServletInitParam extends HttpServlet {
-				protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
+		@WebServlet(value = "/Serv")
+		public class Servlet extends HttpServlet {
 
-				protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-						response.setContentType("text/html; charset=utf-8");
+				@Override
+				public void init() throws ServletException {
+						super.init();
+						System.out.println("init!!");
+				}
 
-						String id = getInitParameter("id");
-						String pw = getInitParameter("pw");
-						String desc = getInitParameter("desc");
+				@Override
+				protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+						super.service(req, resp);
+						System.out.println("HttpServlet Service");
+				}
 
+
+				protected void doPost(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+				}
+
+				protected void doGet(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 						PrintWriter out = response.getWriter();
-						out.println("<title>form result</title>" +
-										"당신이 입력한 정보입니다.<br>" +
-										"<b>ID</b> : " + id + "<br>" +
-										"<b>Password</b> : " + pw + "<br>" +
-										"<b>자기소개</b><br>" +
-										desc);
+						out.println("DD GET");
+						System.out.println("doGet!!");
+				}
+
+				@Override
+				public void destroy() {
+						super.destroy();
+						System.out.println("destroy!!");
 				}
 		}
 		```
-	
-	* ##### web.xml
-	
-			<?xml version="1.0" encoding="UTF-8"?>
-			<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-							 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-							 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-							 version="4.0">
-							 
+
+1. ### Servlet Context Listener 생성
+	* #### 마우스 우클릭 -> New -> Create New Listener
+		![](/assets/img/jsp/listener2.png)
+		
+	* #### ServletContextListener 제외하고 나머지 implements 제거
+		```java
+		import javax.servlet.ServletContextEvent;
+		import javax.servlet.ServletContextListener;
+		import javax.servlet.annotation.WebListener;
+
+		@WebListener()
+		public class ContextListener implements ServletContextListener{
+				public ContextListener() {}
+
+				public void contextInitialized(ServletContextEvent sce) {
+						System.out.println("contextInitialized");
+				}
+
+				public void contextDestroyed(ServletContextEvent sce) {
+						System.out.println("contextDestroyed");
+				}
+		}
+		```
+		
+2. ### web.xml에 Context Listener 등록
+		<?xml version="1.0" encoding="UTF-8"?>
+		<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+						 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+						 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+						 version="4.0">
 				...
-				
-				<servlet>
-						<servlet-name>InitParam</servlet-name>
-						<servlet-class>example.ServletInitParam</servlet-class>
-				</servlet>
-				<servlet-mapping>
-						<servlet-name>InitParam</servlet-name>
-						<url-pattern>/initParam</url-pattern>
-				</servlet-mapping>
-				
+
+				<!-- 추가 -->
+				<listener>
+						<listener-class>example.ContextListener</listener-class>
+				</listener>
+
 				...
-				
-			</web-app>
-
-* ### 특정 Servlet의 Parameter 초기화
-	* #### web.xml 사용
-		* ##### web.xml에 매핑한 Servlet 태그 안에서 파라미터 초기화
-				<servlet>
-						<servlet-name>InitParam</servlet-name>
-						<servlet-class>example.ServletInitParam</servlet-class>
-
-						<!--추가-->
-						<init-param>
-								<param-name>id</param-name>
-								<param-value>qwer</param-value>
-						</init-param>
-						<init-param>
-								<param-name>pw</param-name>
-								<param-value>1234</param-value>
-						</init-param>
-						<init-param>
-								<param-name>desc</param-name>
-								<param-value>Hello</param-value>
-						</init-param>
-
-				</servlet>
-				<servlet-mapping>
-						<servlet-name>InitParam</servlet-name>
-						<url-pattern>/initParam</url-pattern>
-				</servlet-mapping>
+		</web-app>
 			
-		* ##### 매핑된 URL로 접근하면 초기화 시켜놓은 파라미터가 출력된 것을 볼 수 있다
-
-			![](/assets/img/jsp/servlet_param1.png)
- 
-	* #### Annotation 사용
-		* ##### ServletInitParam.java의 클래스 위에 아래의 어노태이션을 추가
-	
-			```
-			@WebServlet(name = "ServletInitParam", urlPatterns = {"/initParam"},
-					initParams = {@WebInitParam(name = "id", value = "qwer"), @WebInitParam(name = "pw", value = "1234"),
-									@WebInitParam(name = "desc", value = "Hello")})
-			```
-									
-		* ##### 마찬가지로 초기화 시켜놓은 파라미터가 출력된 것을 볼 수 있다
-
-			![](/assets/img/jsp/servlet_param1.png)
-		
-		
-* ### Servlet Context을 사용해 모든 Servlet에 파라미터 공유
-	* #### web.xml에 Context Param을 초기화
-		* ##### web.xml에 아래의 코드 추가
-				<context-param>
-						<param-name>id</param-name>
-						<param-value>qwer</param-value>
-				</context-param>
-				<context-param>
-						<param-name>pw</param-name>
-						<param-value>asdf</param-value>
-				</context-param>
-		* ##### ServletContextParam.java
-			```java
-			import javax.servlet.ServletException;
-			import javax.servlet.annotation.WebServlet;
-			import javax.servlet.http.HttpServlet;
-			import javax.servlet.http.HttpServletRequest;
-			import javax.servlet.http.HttpServletResponse;
-			import java.io.IOException;
-			import java.io.PrintWriter;
-
-			@WebServlet(urlPatterns = {"/contextParam"})
-			public class ServletContextParam extends HttpServlet {
-					protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { }
-
-					protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-							response.setContentType("text/html;charset=utf-8");
-							String id = getServletContext().getInitParameter("id");
-							String pw = getServletContext().getInitParameter("pw");
-
-							PrintWriter out = response.getWriter();
-							out.println("<title>form result</title>" +
-											"당신이 입력한 정보입니다.<br>" +
-											"<b>ID</b> : " + id + "<br>" +
-											"<b>Password</b> : " + pw );
-					}
-			}
-			```
+* ### 로그로 동작여부를 확인 할 수 있다
+	![](/assets/img/jsp/listener1.png)
 		 
-	 * ##### 결과 화면. ServletContextParam 뿐 아니라 다른 Servlet에서도 파라미터가 공유된다
-		 
-		![](/assets/img/jsp/servlet_param2.png)		 
 * ###### [신입SW인력을 위한 실전 JSP Servlet]
 
 
-[신입SW인력을 위한 실전 JSP Servlet]: https://www.youtube.com/watch?v=2Pqi-kUMwtw&list=PLieE0qnqO2kTyzAlsvxzoulHVISvO8zA9&index=39
+[신입SW인력을 위한 실전 JSP Servlet]: https://www.youtube.com/watch?v=nb0ACztuQR0&list=PLieE0qnqO2kTyzAlsvxzoulHVISvO8zA9&index=40
