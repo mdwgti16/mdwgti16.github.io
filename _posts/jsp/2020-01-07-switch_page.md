@@ -16,49 +16,53 @@ categories: JSP
 
 * ### Forward
 	* ##### jsp:forward
-
-			<jsp:forward page="result.jsp">
-				<jsp:param name="id" value="qwer"/>
-				<jsp:param name="pw" value="1234"/>
-			</jsp:forward>
+		```jsp
+		<jsp:forward page="result.jsp">
+			<jsp:param name="id" value="qwer"/>
+			<jsp:param name="pw" value="1234"/>
+		</jsp:forward>
+		```
 			
 	* ##### pageContext.forward(String s)
-
-			<% pageContext.forward("page.jsp"); %>
+		```jsp
+		<% pageContext.forward("page.jsp"); %>
+		```
 
 	* ##### RequestDispatcher
-
-			<%
-				RequestDispatcher rd = request.getRequestDispatcher("page,jsp");
-				rd.forward(request,response);
-			%>
-
-	
+		```jsp
+		<%
+			RequestDispatcher rd = request.getRequestDispatcher("page,jsp");
+			rd.forward(request,response);
+		%>
+		```
+		
 		
 * ### Redirect
 	* ##### response.sendRedirect(String s)
-	
-			<%
-				response.sendRedirect("page.jsp");
-			%>
+		```jsp
+		<%
+			response.sendRedirect("page.jsp");
+		%>
+		```
 
 * ### Html
 	* ##### Form 태그
-
-			<form action="page.jsp">
-				<label>ID : <input type="text" name="id"></label>
-				<label>Password : <input type="text" name="qw"></label>
-				<input type="submit" value="Submit">
-			</form>
+		```html
+		<form action="page.jsp">
+			<label>ID : <input type="text" name="id"></label>
+			<label>Password : <input type="text" name="qw"></label>
+			<input type="submit" value="Submit">
+		</form>
+		```
 			
 	* ##### a href=" "
-
-			<a href="page.jsp">Move Next Page</a>
-			
+		```html
+		<a href="page.jsp">Move Next Page</a>
+		```
 	* ##### location.href=" "
-
-			<input type="button" value="Move Next Page" onclick="location.href='page.jsp'">
-	
+		```html
+		<input type="button" value="Move Next Page" onclick="location.href='page.jsp'">
+		```
 	
 	
 

@@ -15,86 +15,88 @@ categories: JSP
 
 * #### Project - FormTest
 	* ##### rform.html
-			<!DOCTYPE html>
-			<html lang="en">
-			<head>
-					<meta charset="UTF-8">
-					<title>textform</title>
-					<style>
-							table {
-									/*width: 100%;*/
-									border: 1px solid #444444;
-									margin-left: auto;
-									margin-right: auto;
-							}
+		```html
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+				<meta charset="UTF-8">
+				<title>textform</title>
+				<style>
+						table {
+								/*width: 100%;*/
+								border: 1px solid #444444;
+								margin-left: auto;
+								margin-right: auto;
+						}
 
-							td {
-									/*width: 100%;*/
-									border: 1px solid #444444;
-							}
+						td {
+								/*width: 100%;*/
+								border: 1px solid #444444;
+						}
 
-							.c {
-									text-align: center;
-							}
-					</style>
-			</head>
-			<body>
+						.c {
+								text-align: center;
+						}
+				</style>
+		</head>
+		<body>
 
-			<p class="c"> 가입할 ID와 Password 및 자기소개를 입력하세요.</p>
-			<form action="/form" method="post" name="textform">
-					<table>
-							<tr>
-									<td>ID :</td>
-									<td><input type="text" name="id"></td>
-							</tr>
-						
-							<tr>
-									<td>Password :</td>
-									<td><input type="password" name="pw"></td>
-							</tr>
-						
-							<tr>
-									<td>자기소개<br/></td>
-									<td><textarea name="desc" cols="50" fows="4"></textarea><br/></td>
-							</tr>
+		<p class="c"> 가입할 ID와 Password 및 자기소개를 입력하세요.</p>
+		<form action="/form" method="post" name="textform">
+				<table>
+						<tr>
+								<td>ID :</td>
+								<td><input type="text" name="id"></td>
+						</tr>
 
-							<tr>
-									<td>소속국가</td>
-									<td>
-											<select name="na" size="3" multiple>
-													<option selected>Korea</option>
-													<option>USA</option>
-													<option>Canada</option>
-											</select>
-									</td>
-							</tr>
+						<tr>
+								<td>Password :</td>
+								<td><input type="password" name="pw"></td>
+						</tr>
 
-							<tr>
-									<td>관심분야</td>
-									<td><input type="checkbox" name="interested" value="엔터테인먼트">엔터테인먼트<br/>
-											<input type="checkbox" name="interested" value="컴퓨터/인터넷">컴퓨터/인터넷<br/>
-											<input type="checkbox" name="interested" value="경제/비지니스">경제/비지니스<br/>
-											<input type="checkbox" name="interested" value="스포츠/건강">스포츠/건강<br/>
-											<input type="checkbox" name="interested" value="여행/관광">여행/관광<br/>
-									</td>
-							</tr>
-							<tr>
-									<td>결혼여부</td>
-									<td>
-											<input type="radio" name="m_status" value="미혼" checked>미혼
-											<input type="radio" name="m_status" value="기혼">기혼
-									</td>
-							</tr>
+						<tr>
+								<td>자기소개<br/></td>
+								<td><textarea name="desc" cols="50" fows="4"></textarea><br/></td>
+						</tr>
 
-					</table>
-					<br/>
-					<div class="c">
-							<input type="submit" value="전송" name="submitbtn">
-							<input type="reset" value="초기화" name="resetbtn">
-					</div>
-			</form>
-			</body>
-			</html>
+						<tr>
+								<td>소속국가</td>
+								<td>
+										<select name="na" size="3" multiple>
+												<option selected>Korea</option>
+												<option>USA</option>
+												<option>Canada</option>
+										</select>
+								</td>
+						</tr>
+
+						<tr>
+								<td>관심분야</td>
+								<td><input type="checkbox" name="interested" value="엔터테인먼트">엔터테인먼트<br/>
+										<input type="checkbox" name="interested" value="컴퓨터/인터넷">컴퓨터/인터넷<br/>
+										<input type="checkbox" name="interested" value="경제/비지니스">경제/비지니스<br/>
+										<input type="checkbox" name="interested" value="스포츠/건강">스포츠/건강<br/>
+										<input type="checkbox" name="interested" value="여행/관광">여행/관광<br/>
+								</td>
+						</tr>
+						<tr>
+								<td>결혼여부</td>
+								<td>
+										<input type="radio" name="m_status" value="미혼" checked>미혼
+										<input type="radio" name="m_status" value="기혼">기혼
+								</td>
+						</tr>
+
+				</table>
+				<br/>
+				<div class="c">
+						<input type="submit" value="전송" name="submitbtn">
+						<input type="reset" value="초기화" name="resetbtn">
+				</div>
+		</form>
+		</body>
+		</html>
+		```
 			
 	* ##### RForm.java
 		```java

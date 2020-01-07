@@ -38,14 +38,16 @@ categories: JSP
 	```
 
 * #### web.xml을 이용한 매핑
-		<servlet>
-				<servlet-name>ServletTest</servlet-name>
-				<servlet-class>example.Servlet</servlet-class>
-		</servlet>
-		<servlet-mapping>
-				<servlet-name>ServletTest</servlet-name>
-				<url-pattern>/Serv</url-pattern>
-		</servlet-mapping>
+	```jsp
+	<servlet>
+			<servlet-name>ServletTest</servlet-name>
+			<servlet-class>example.Servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+			<servlet-name>ServletTest</servlet-name>
+			<url-pattern>/Serv</url-pattern>
+	</servlet-mapping>
+	```
 		
 * #### 결과 화면
 			

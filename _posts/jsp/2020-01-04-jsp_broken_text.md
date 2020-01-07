@@ -16,19 +16,29 @@ categories: JSP
 * #### html/JSP -> JSP
 	* ##### Get 방식
 	1. ##### page contentType 부분에 charset=UTF-8 추가
-				<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+		```jsp
+		<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+		```
 	2. ##### 스크립틀릿에서 charset을 UTF-8로 지정
-				<% response.setCharacterEncoding("utf-8"); %>
+		```jsp
+		<% response.setCharacterEncoding("utf-8"); %>
+		```
+		
 	* ##### Post 방식
 	1. ##### 지시자와 스크립틀릿 사용
-				<%@ page contentType="text/html;charset=UTF-8" language="java" %> <%--charset=UTF-8 추가--%>
-				...
-				<% response.setCharacterEncoding("utf-8"); %>
+		```jsp
+		<%@ page contentType="text/html;charset=UTF-8" language="java" %> <%--charset=UTF-8 추가--%>
+		...
+		<% response.setCharacterEncoding("utf-8"); %>
+		```
 	2. ##### 스크립틀릿만 사용
-				<%
-					request.setCharacterEncoding("utf-8");
-					response.setCharacterEncoding("utf-8");
-				%>
+		```jsp
+		<%
+			request.setCharacterEncoding("utf-8");
+			response.setCharacterEncoding("utf-8");
+		%>
+		```
+		
 * #### html/JSP -> Servlet
 	* ##### Get 방식
 	```java

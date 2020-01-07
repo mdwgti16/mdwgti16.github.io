@@ -14,23 +14,25 @@ categories: JSP
 
 * ### Project - ServletTest
 	* #### index.jsp	
-			<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-			<html>
-				<head>
-					<title>$Title$</title>
-				</head>
-				<body>
+		```jsp
+		<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+		<html>
+			<head>
+				<title>$Title$</title>
+			</head>
+			<body>
 
-				<form action="/Serv" method="post">
-					<input type="submit" value="DO POST">
-				</form>
+			<form action="/Serv" method="post">
+				<input type="submit" value="DO POST">
+			</form>
 
-				<form action="/Serv" method="get">
-					<input type="submit" value="DO GET">
-				</form>
+			<form action="/Serv" method="get">
+				<input type="submit" value="DO GET">
+			</form>
 
-				</body>
-			</html>
+			</body>
+		</html>
+		```
 
 	* #### Servlet.java
 		```java

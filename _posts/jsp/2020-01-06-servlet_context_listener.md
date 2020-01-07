@@ -82,20 +82,22 @@ categories: JSP
 		```
 		
 2. ### web.xml에 Context Listener 등록
-		<?xml version="1.0" encoding="UTF-8"?>
-		<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-						 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-						 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-						 version="4.0">
-				...
+	```xml
+	<?xml version="1.0" encoding="UTF-8"?>
+	<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+					 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+					 version="4.0">
+			...
 
-				<!-- 추가 -->
-				<listener>
-						<listener-class>example.ContextListener</listener-class>
-				</listener>
+			<!-- 추가 -->
+			<listener>
+					<listener-class>example.ContextListener</listener-class>
+			</listener>
 
-				...
-		</web-app>
+			...
+	</web-app>
+	```
 			
 * ### 로그로 동작여부를 확인 할 수 있다
 	![](/assets/img/jsp/listener1.png)
