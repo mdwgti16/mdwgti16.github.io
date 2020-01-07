@@ -125,21 +125,23 @@ categories: JSP
 		```
 			
 	* ##### error_404.jsp
-				```jsp
-				<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-				<html>
-				<head>
-						<title>404 Error Page</title>
-				</head>
-				<body>
-				<h2>404 Error Page</h2>
-				</body>
-				</html>
-				```
+		```jsp
+		<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+		<%@ page isErrorPage="true" %>
+		<html>
+		<head>
+				<title>404 Error Page</title>
+		</head>
+		<body>
+		<h2>404 Error Page</h2>
+		</body>
+		</html>
+		```
 
 	* ##### error_500.jsp
 		```jsp
 		<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+		<%@ page isErrorPage="true" %>
 		<html>
 		<head>
 				<title>500 Error Page</title>
