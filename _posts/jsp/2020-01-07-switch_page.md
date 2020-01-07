@@ -25,7 +25,6 @@ categories: JSP
 		```
 			
 	* ##### pageContext.forward(String s)
-		* ###### request.setAttribute(String s, Object o) 메소드를 이용해 값을 전달할 수 있음
 		```jsp
 		<% pageContext.forward("page.jsp"); %>
 		```
@@ -38,7 +37,11 @@ categories: JSP
 		%>
 		```
 		
-		
+	* ##### Forward의 파라미터 전달 방법
+		* ###### request값이 유지되기 때문에 request.setAttribute(String s, Object o) 메소드를 이용해 값을 전달
+		* ###### jsp:forward 태그에 `<jsp:param name="" value=""/>` 를 넣어 값을 전달
+
+
 * ### Redirect
 	* ##### response.sendRedirect(String s)
 		```jsp
@@ -66,8 +69,14 @@ categories: JSP
 		<input type="button" value="Move Next Page" onclick="location.href='page.jsp'">
 		```
 	
-	
 
+* ### JavaScript
+	* ##### location.href
+		```javascript
+		<script>
+			location.href="page.jsp"
+		</script>
+		```
 
 * ###### [JSP - 특정페이지로 이동방법(forward/redirect)]
 * ###### [페이지 이동 방법, Foward, Redirect]
