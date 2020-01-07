@@ -155,6 +155,13 @@ categories: JSP
 			
 	* ##### 요청한 페이지가 없을 때
 		![](/assets/img/jsp/error5.png)
+	
+	* ##### 에러 페이지에서 예외처리를 못하고 에러가 날 경우 아래의 코드 추가
+		```jsp
+		<% response.setStatus(200); %>
+		```
+			
+		
 				
 * ###### [신입SW인력을 위한 실전 JSP Servlet]
 
