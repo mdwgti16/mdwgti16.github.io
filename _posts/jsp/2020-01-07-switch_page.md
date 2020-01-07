@@ -16,6 +16,7 @@ categories: JSP
 
 * ### Forward
 	* ##### jsp:forward
+		
 		```jsp
 		<jsp:forward page="result.jsp">
 			<jsp:param name="id" value="qwer"/>
@@ -24,6 +25,7 @@ categories: JSP
 		```
 			
 	* ##### pageContext.forward(String s)
+		* ###### request.setAttribute(String s, Object o) 메소드를 이용해 값을 전달할 수 있음
 		```jsp
 		<% pageContext.forward("page.jsp"); %>
 		```
