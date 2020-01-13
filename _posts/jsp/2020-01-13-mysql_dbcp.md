@@ -10,7 +10,7 @@ date: '2020-1-13 13:27:28 +0900'
 categories: JSP
 ---
 
-> ## > MySQL DBCP (Connection Pool)
+> ## MySQL DBCP (Connection Pool)
 
 
 * ### Connection Pool 설정
