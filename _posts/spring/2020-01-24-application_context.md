@@ -44,6 +44,12 @@ categories: Spring
 								return new MyConnectionMaker();
 						}			
 				```
+				
+			* ###### 어노테이션 설정정보를 사용하는 애플리케이션 컨텍스트 가져오기
+				```java
+				ApplicationContext context = new AnnotationConfigApplicationContext((DaoFactory.class));
+				UserDao dao = context.getBean("userDao", UserDao.class);				
+				```
 			* ###### @Configuration : 빈 팩토리를 위한 오브젝트 설정을 담담하는 클래스라고 인식
 			* ###### @Bean : 오브젝트를 만들어주는 메소드
 		*  ###### xml 설정정보 이용
@@ -60,6 +66,11 @@ categories: Spring
 
 						<bean id="connectionMaker" class="dao.MyConnectionMaker"/>
 				</beans>
+				```
+			* ##### xml 설정정보를 사용하는 애플리케이션 컨텍스트 가져오기
+				```java
+				ApplicationContext context = new GenericXmlApplicationContext("applicationContext.xml");
+				UserDao dao = context.getBean("userDao", UserDao.class);				
 				```
 			* ###### @Configuration -> <beans> : 빈 설정파일
 			* ###### @Bean methodName -> <bean id="methodName" : 빈의 이름
@@ -98,6 +109,10 @@ categories: Spring
 				</beans>
 				```
 				* ###### 해당 클래스에 setter 메소드가 있어야 된다
+* ### 애플리케션 컨텍스트를 사용했을 때의 장점
+	* ##### 클라이언트는 구체적인 패곹리 클래스를 알 필요가 없음
+	* ##### 애플리케이션 컨텍스트는 종합 IoC 서비스를 제공해줌
+	* ##### 애플리케이션 컨텍스트는 빈을 검색하는 다양한 방법을 제공함
 
 * ###### [토비의 스프링 3.1]
 
