@@ -78,7 +78,7 @@ categories: Spring
 
 			
 
-* ###### [Spring MVC, Maven 프로젝트 설정 방법]
+> ###### [Spring MVC, Maven 프로젝트 설정 방법]
 
 
 
