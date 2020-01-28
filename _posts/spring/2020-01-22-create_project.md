@@ -79,7 +79,8 @@ categories: Spring
 			
 
 > ###### [Spring MVC, Maven 프로젝트 설정 방법]
-
+> ###### [Intellij에서 Spring MVC 시작하기]
 
 
 [Spring MVC, Maven 프로젝트 설정 방법]: https://whitepaek.tistory.com/41
+[Intellij에서 Spring MVC 시작하기]: https://nesoy.github.io/articles/2017-02/SpringMVC
