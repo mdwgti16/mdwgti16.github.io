@@ -32,8 +32,8 @@ categories: Spring
 
 	c.close();
 	```
-##### JDBC에서 트랜잭션을 시작하려면 자동커밋 옵션을 false로 만들어주고 정상적으로 모든 동작이 실행되면 commit(), 그렇지 않으면 rollback()으로 트랜젝션을 종료하면 된다. 트랜잭션의 경계는 하나의 Connection이 만들어지고 닫히는 범위 안에 존재한다. 
-##### 스프링의 JdbcTemplate을 사용하게 되면 직접적으로 Connection을 사용하지 않는다. JdbcTemplate의 메소드 내에서 트랜젝션이 새로 만들어지고 메소드가 빠져나오기 전에 종료되기 때문에 위와 같은 방법으로는 JdbcTemplate에서 트랜젝션의 경계설정이 불가능하다.
+##### JDBC에서 트랜잭션을 시작하려면 자동커밋 옵션을 false로 만들어주고 정상적으로 모든 동작이 실행되면 commit(), 그렇지 않으면 rollback()으로 트랜잭션을 종료하면 된다. 트랜잭션의 경계는 하나의 Connection이 만들어지고 닫히는 범위 안에 존재한다. 
+##### 스프링의 JdbcTemplate을 사용하게 되면 직접적으로 Connection을 사용하지 않는다. JdbcTemplate의 메소드 내에서 트랜잭션이 새로 만들어지고 메소드가 빠져나오기 전에 종료되기 때문에 위와 같은 방법으로는 JdbcTemplate에서 트랜잭션의 경계설정이 불가능하다.
 * ### 트랜잭션 동기화
 	```java
 	public class UserDaoJdbc implements UserDao {
@@ -101,26 +101,31 @@ categories: Spring
 	}	
 	```
 	```java
-	public void upgradeLevels() throws SQLException {
-			TransactionSynchronizationManager.initSynchronization();
-			Connection c = DataSourceUtils.getConnection(dataSource);
-			c.setAutoCommit(false);
+	public class UserService{
+		...
 
-			try {
-					List<User> users = userDao.getAll();
-					for (User user : users) {
-							if (canUpgradeLevel(user))
-									upgradeLevel(user);
-					}
-					c.commit();
-			}catch (Exception e) {
-					c.rollback();
-					throw e;
-			}finally {
-					DataSourceUtils.releaseConnection(c,this.dataSource);
-					TransactionSynchronizationManager.unbindResource(this.dataSource);
-					TransactionSynchronizationManager.clearSynchronization();
-			}
+		public void upgradeLevels() throws SQLException {
+				TransactionSynchronizationManager.initSynchronization();
+				Connection c = DataSourceUtils.getConnection(dataSource);
+				c.setAutoCommit(false);
+
+				try {
+						List<User> users = userDao.getAll();
+						for (User user : users) {
+								if (canUpgradeLevel(user))
+										upgradeLevel(user);
+						}
+						c.commit();
+				}catch (Exception e) {
+						c.rollback();
+						throw e;
+				}finally {
+						DataSourceUtils.releaseConnection(c,this.dataSource);
+						TransactionSynchronizationManager.unbindResource(this.dataSource);
+						TransactionSynchronizationManager.clearSynchronization();
+				}
+		}
+		...
 	}
 	```
 ##### TransactionSynchronizationManager는 스프링에서 제공하는 트랜잭션 동기화 관련 클래스이다. 이 클래스를 이용해 먼저 트랜잭션 동기화 작업을 초기화하도록 한다.
@@ -151,7 +156,7 @@ categories: Spring
 	</beans>	
 	```
 	```java
-	public class UserService {
+	public class UserService{
 			...
 			private PlatformTransactionManager transactionManager;
 
