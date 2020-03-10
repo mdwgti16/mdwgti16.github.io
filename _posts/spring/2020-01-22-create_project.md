@@ -23,12 +23,86 @@ categories: Spring
 		![](/assets/img/spring/create_project3.png)
 	* ##### Spring MVC 선택 -> OK
 		![](/assets/img/spring/create_project4.png)
+	* ##### Artifacts 설정
+		![](/assets/img/spring/create_project4-1.png)
+		![](/assets/img/spring/create_project4-2.png)
+	* ##### Controller 생성
+		```java
+		package com.ex.spring.controller;
+
+		import org.springframework.stereotype.Controller;
+		import org.springframework.web.bind.annotation.RequestMapping;
+
+		@Controller
+		public class MController {
+				@RequestMapping("/index")
+				public String home(){
+						return "index";
+				}
+		}
+		```
+	* ##### 디렉터리 구조
+		![](/assets/img/spring/create_project4-3.png)
+* ### xml 파일 설정
+	<details markdown="1">
+	<summary><font size="4px" >web.xml</font></summary>
+	```xml
+	<?xml version="1.0" encoding="UTF-8"?>
+	<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+					 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+					 version="4.0">
+			<context-param>
+					<param-name>contextConfigLocation</param-name>
+					<param-value>/WEB-INF/applicationContext.xml</param-value>
+			</context-param>
+			<listener>
+					<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+			</listener>
+			<servlet>
+					<servlet-name>dispatcher</servlet-name>
+					<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+					<load-on-startup>1</load-on-startup>
+			</servlet>
+			<servlet-mapping>
+					<servlet-name>dispatcher</servlet-name>
+					<url-pattern>/</url-pattern>
+			</servlet-mapping>
+	</web-app>	
+	```	
+	</details>	
+
+	<details markdown="1">
+	<summary><font size="4px" >dispatcher-servlet.xml</font></summary>
+	```xml
+	<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				 xmlns:context="http://www.springframework.org/schema/context"
+				 xmlns:mvc="http://www.springframework.org/schema/mvc"
+				 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+			<mvc:annotation-driven/>
+
+			<mvc:resources mapping="/resources/**" location="/resources/"/>
+
+			<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+					<property name="prefix" value="/WEB-INF/views/"/>
+					<property name="suffix" value=".jsp"/>
+			</bean>
+
+			<context:component-scan base-package="com.ex.spring.controller"/>
+	</beans>
+	```	
+	</details>		
 * ### Tomcat 연동
 	* ##### Add Configuration -> Add New Configuration -> Tomcat Server -> Local 선택
 		![](/assets/img/spring/create_project5.png)
 	* ##### Fix -> Application context 를 /로 수정
 		![](/assets/img/spring/create_project6.png)
 		![](/assets/img/spring/create_project7.png)
+	* ##### index 화면
+		![](/assets/img/spring/create_project7-1.png)
 * ### MySQL 연동		
 	* ##### Project Structure (Ctrl + Alt + Shift + S) -> Libraries -> New Project Library -> Java
 		![](/assets/img/spring/create_project8.png)
@@ -74,8 +148,6 @@ categories: Spring
 		}
 		```
 	* ##### USER 테이블이 추가 됨
-		![](/assets/img/spring/create_project12.png)
-
 			
 
 > ###### [Spring MVC, Maven 프로젝트 설정 방법]
