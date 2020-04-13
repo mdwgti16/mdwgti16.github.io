@@ -58,7 +58,7 @@ categories:
 	* ##### Run Application
 	 ![](/assets/img/spring_boot/start3.png)
 	* ##### 결과 화면
-		![](/assets/img/spring_boot/start.png)
+		![](/assets/img/spring_boot/start4.png)
 	
 		
 		
