@@ -11,7 +11,7 @@ categories:
 - Spring Boot
 ---
 
-> ## Database 사용법
+> ## Spring Boot - 프로젝트 생성 (1)
 
 * ### Create Project 
 	* ##### [Spring Initializr](http://start.spring.io/) 접속
