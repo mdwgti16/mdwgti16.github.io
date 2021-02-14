@@ -1,5 +1,5 @@
 ---
-title: Intellij Spring Boot - 프로젝트 생성 (1)
+title: Intellij Spring Boot - 프로젝트 생성
 layout: single
 author_profile: true
 read_time: true
