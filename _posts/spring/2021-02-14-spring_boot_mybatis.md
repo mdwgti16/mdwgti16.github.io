@@ -1,5 +1,5 @@
 ---
-title: Spring Boot - Mybatis 빠르게 연동하기
+title: Spring Boot - Mybatis 연동
 layout: single
 author_profile: true
 read_time: true
@@ -11,7 +11,7 @@ categories:
 - Spring Boot
 ---
 
-> ## Spring Boot - Mybatis 빠르게 연동하기
+> ## Spring Boot - Mybatis 연동
 
 * ### Dependency 설정 
 	pom.xml
