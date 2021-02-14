@@ -233,8 +233,5 @@ categories:
 	result -> UserDto(id=abc, password=qwer, name=1234, email=zxcv)
  	result -> UserDto(id=abc, password=qwer, name=1234, email=zxcv)
 	```
-> ###### [Introduction What is MyBatis-Spring-Boot-Starter?]
-> ###### [MyBatis @Mapper 인터페이스는 어떻게 스프링 빈으로 와이어될 수 있을까?]
-[Introduction
-What is MyBatis-Spring-Boot-Starter?]: http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/
-[MyBatis @Mapper 인터페이스는 어떻게 스프링 빈으로 와이어될 수 있을까?]: http://wiki.plateer.com/pages/viewpage.action?pageId=7767258
+> ###### [Introduction What is MyBatis-Spring-Boot-Starter?](http://mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)
+> ###### [MyBatis @Mapper 인터페이스는 어떻게 스프링 빈으로 와이어될 수 있을까?](http://wiki.plateer.com/pages/viewpage.action?pageId=7767258)
