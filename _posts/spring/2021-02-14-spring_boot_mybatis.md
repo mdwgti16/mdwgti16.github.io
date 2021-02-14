@@ -120,7 +120,7 @@ categories:
 	```	
 	##### 공식 문서를 보면 datasource를 감지해서 SqlSessionFactory을 만들고, 만들어진 SqlSessionFactory로 SqlSessionTemplate을 자동으로 만든다고 한다. 따라서 특별한 설정이 필요하지 않을 경우 위의 MyBatisConfiguration.class는 없어도 문제가 없다.
 
-* ### DTO 및 Mapper 생성
+* ### DTO 생성
 	UserDto.class
 	```
 	@Data
@@ -131,147 +131,107 @@ categories:
 		String email;
 	}
 	```	
-	UserMapper.class
-	```
-	@Mapper
-	public interface UserMapper {
-		@Select("SELECT * FROM user WHERE id = #{id}")
-		UserDto findById(@Param("id") String id);
-	}
-	```	
+* ### 세 가지 사용 방법
+	* ### Mapper 사용
+		UserMapper.class
+		```
+		@Mapper
+		public interface UserMapper {
+			@Select("SELECT * FROM user WHERE id = #{id}")
+			UserDto findById(@Param("id") String id);
+		}
+		```	
+	* ### SqlSessionFactory 사용
+		UserDaoMapper.class
+		```
+		@Mapper
+		public interface UserDaoMapper {
+			UserDto selectUserById(String id);
+		}
+		```	
+		mapper.xml
+		```
+		<?xml version="1.0" encoding="UTF-8"?>
+		<!DOCTYPE mapper
+				PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+		<mapper namespace="com.example.dao.UserDaoMapper">
+			<select id="selectUserById" parameterType="String" resultType="UserDto">
+				SELECT *
+				FROM USER
+				WHERE id = #{value}
+			</select>
+		</mapper>
+		```
+	* ### SqlSessionTemplate 사용
+		UserDao.class
+		```
+		@Component
+		public class UserDao {
+			private final SqlSession sqlSession;
+
+			public UserDao(@Qualifier("sqlSessionTemplate") SqlSession sqlSession) {
+				this.sqlSession = sqlSession;
+			}
+
+			public UserDto selectUserById(String id){
+				return this.sqlSession.selectOne("com.example.dao.UserDao.selectUserById", id);
+			}
+		}
+		```
+		mapper.xml
+		```
+		<?xml version="1.0" encoding="UTF-8"?>
+		<!DOCTYPE mapper
+				PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+				"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+		<mapper namespace="com.example.dao.UserDao">
+			<select id="selectUserById" parameterType="String" resultType="UserDto">
+				SELECT *
+				FROM USER
+				WHERE id = #{value}
+			</select>
+		</mapper>
+		```
 * ### 실행 및 결과
-	MyBatisTestApplication.class
+	TestMyBatis.class
 	```
 	@SpringBootApplication
 	@Slf4j
-	public class MyBatisTestApplication implements CommandLineRunner {
+	public class TestMyBatisApplication implements CommandLineRunner {
 
 		private final UserMapper userMapper;
+		private final UserDao userDao;
 
-		public MyBatisTestApplication(UserMapper userMapper) {
+		public TestMyBatisApplication(UserMapper userMapper, UserDao userDao) {
 			this.userMapper = userMapper;
+			this.userDao = userDao;
 		}
 
+		@Autowired
+		private UserDaoMapper userDaoMapper;
+
 		public static void main(String[] args) {
-			SpringApplication.run(MyBatisTestApplication.class, args);
+			SpringApplication.run(TestMyBatisApplication.class, args);
 
 		}
 
 		@Override
 		public void run(String... args) throws Exception {
 			log.info("result -> {}",this.userMapper.findById("abc"));
-		}
-	}
-	```
-	result log
-	```
-	result -> UserDto(id=abc, password=qwer, name=1234, email=zxcv)
-	```
-* ### SqlSessionFactory 사용시
-	UserDaoMapper.class
-	```
-	@Mapper
-	public interface UserDaoMapper {
-		UserDto selectUserById(String id);
-	}
-	```	
-	mapper.xml
-	```
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!DOCTYPE mapper
-			PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-	<mapper namespace="com.example.dao.UserDaoMapper">
-		<select id="selectUserById" parameterType="String" resultType="UserDto">
-			SELECT *
-			FROM USER
-			WHERE id = #{value}
-		</select>
-	</mapper>
-	```
-	DataBatchApplication.class
-	```
-	@SpringBootApplication
-	@Slf4j
-	public class DataBatchApplication implements CommandLineRunner {
-
-		@Autowired
-		private UserDaoMapper userDaoMapper;
-
-		public static void main(String[] args) {
-			SpringApplication.run(DataBatchApplication.class, args);
-
-		}
-
-		@Override
-		public void run(String... args) throws Exception {
+			log.info("result -> {}",this.userDao.selectUserById("abc"));
 			log.info("result -> {}",this.userDaoMapper.selectUserById("abc"));
 		}
-	}	
-	```
-	result log
-	```
-	result -> UserDto(id=abc, password=qwer, name=1234, email=zxcv)
-	```
-* ### SqlSessionTemplate 사용 시
-	UserDao.class
-	```
-	@Component
-	public class UserDao {
-		private final SqlSession sqlSession;
-
-		public UserDao(@Qualifier("sqlSessionTemplate") SqlSession sqlSession) {
-			this.sqlSession = sqlSession;
-		}
-
-		public UserDto selectUserById(String id){
-			return this.sqlSession.selectOne("selectUserById", id);
-		}
 	}
 	```
-	mapper.xml
-	```
-	<?xml version="1.0" encoding="UTF-8"?>
-	<!DOCTYPE mapper
-			PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-	<mapper namespace="com.example.dao.UserDao">
-		<select id="selectUserById" parameterType="String" resultType="UserDto">
-			SELECT *
-			FROM USER
-			WHERE id = #{value}
-		</select>
-	</mapper>
-	```
-	DataBatchApplication.class
-	```
-	@SpringBootApplication
-	@Slf4j
-	public class DataBatchApplication implements CommandLineRunner {
-
-		private final UserDao userDao;
-
-		public DataBatchApplication(UserDao userDao) {
-			this.userDao = userDao;
-		}
-
-		public static void main(String[] args) {
-			SpringApplication.run(DataBatchApplication.class, args);
-
-		}
-
-		@Override
-		public void run(String... args) throws Exception {
-			log.info("result -> {}",this.userDao.selectUserById("abc"));
-		}
-	}
-	```	
+	
 	result log
 	```
+ 	result -> UserDto(id=abc, password=qwer, name=1234, email=zxcv)
 	result -> UserDto(id=abc, password=qwer, name=1234, email=zxcv)
+ 	result -> UserDto(id=abc, password=qwer, name=1234, email=zxcv)
 	```
 > ###### [Introduction What is MyBatis-Spring-Boot-Starter?]
 > ###### [MyBatis @Mapper 인터페이스는 어떻게 스프링 빈으로 와이어될 수 있을까?]
