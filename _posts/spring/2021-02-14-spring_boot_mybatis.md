@@ -149,7 +149,7 @@ categories:
 			UserDto selectUserById(String id);
 		}
 		```	
-		mapper.xml
+		user-dao-mapper.xml
 		```
 		<?xml version="1.0" encoding="UTF-8"?>
 		<!DOCTYPE mapper
@@ -180,7 +180,7 @@ categories:
 			}
 		}
 		```
-		mapper.xml
+		user-dao.xml
 		```
 		<?xml version="1.0" encoding="UTF-8"?>
 		<!DOCTYPE mapper
