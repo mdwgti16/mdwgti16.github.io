@@ -118,7 +118,7 @@ categories:
 
 	</configuration>
 	```	
-	공식 문서를 보면 존재하는 datasource를 감지해서 SqlSessionFactory을 만들고 만들어진 SqlSessionFactory으로 SqlSessionTemplate을 자동으로 만든다고 한다. 따라서 특정한 설정이 필요하지 않을 경우 위의 MyBatisConfiguration.class는 없어도 문제가 없다.
+	##### 공식 문서를 보면 datasource를 감지해서 SqlSessionFactory을 만들고, 만들어진 SqlSessionFactory로 SqlSessionTemplate을 자동으로 만든다고 한다. 따라서 특별한 설정이 필요하지 않을 경우 위의 MyBatisConfiguration.class는 없어도 문제가 없다.
 
 * ### DTO 및 Mapper 생성
 	UserDto.class
